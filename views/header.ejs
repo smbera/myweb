@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= myweb.title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+  <body>
+        <div class="header">
+          <h1><%= myweb.title %></h1>
+          <p><%= myweb.description %></p>
+        </div>
+        <a href="/signup">注册</a>
+        <a href="/signin">登录</a>
+         <% if (success) { %>
+              <p><%= success %></p>
+          <% } %>
+
+          <% if (error) { %>
+              <p><%= error %></p>
+           <% } %>
+ </body>
+</html>
