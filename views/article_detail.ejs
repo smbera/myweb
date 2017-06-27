@@ -1,0 +1,13 @@
+        
+<h1><%= article.title %></h1><br>
+<a href="/people/<%= article.author._id %>"><img style="width:40px;height:40px;" src="/img/<%= article.author.avatar %>"> </a>
+<%= article.author.name %>&nbsp&nbsp&nbsp&nbsp<%= article.created_at %><br>
+<%- article.content %><br>
+pv：<%= article.pv %><br>
+
+<% if(article.author._id==user._id){ %>
+	<a href="/article/<%= article._id %>/edit">编辑</a>
+	<a href="/article/<%= article._id %>/remove">删除</a>
+<%}%>
+
+        <br><br><br>

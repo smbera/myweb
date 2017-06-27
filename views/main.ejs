@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-	</head>
-	<body>
-		
-		<%- include('components/main-people_header') %>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+        </title>
+    </head>
+    <body>
+        <%- include('components/main-people_header') %>
 		this is main page
-		
-	</body>
+        <br>
+            <a href="/write">
+                写文章
+            </a>
+        </br><br><br>
+        <% articles.forEach(function (article) { %>
+        <%- include('components/article_content', { article: article }) %>
+        <% }) %>
+    </body>
 </html>

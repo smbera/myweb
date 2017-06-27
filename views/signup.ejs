@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title><%= myweb.title %></title>
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
-  <body>
+    <head>
+        <meta charset="utf-8">
+            <title>
+                <%= myweb.title %>
+            </title>
+            <link href="/css/style.css" rel="stylesheet">
+            </link>
+        </meta>
+    </head>
+    <body>
         <%- include('components/signup-signin_header') %>
-
-        <form  method="post" >
-
-      <div >
-        <label>用户名</label>
-        <input placeholder="用户名" type="text" name="name">
-      </div>
-
-      <div >
-        <label>密码</label>
-        <input placeholder="密码" type="password" name="password">
-      </div>
-
-      <div>
-        <label>重复密码</label>
-        <input placeholder="重复密码" type="password" name="repassword">
-      </div>
-      
-      <input type="submit" value="注册">
-  </form>
- </body>
+        <form method="post">
+            <div>
+                <label>
+                    用户名
+                </label>
+                <input name="name" placeholder="用户名" type="text">
+                </input>
+            </div>
+            <div>
+                <label>
+                    密码
+                </label>
+                <input name="password" placeholder="密码" type="password"/>
+            </div>
+            <div>
+                <label>
+                    重复密码
+                </label>
+                <input name="repassword" placeholder="重复密码" type="password">
+                </input>
+            </div>
+            <input type="submit" value="注册">
+            </input>
+        </form>
+    </body>
 </html>

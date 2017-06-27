@@ -10,23 +10,22 @@
         </meta>
     </head>
     <body>
-        <%- include('components/signup-signin_header') %>
-        <form method="post">
+        <form action="/write" method="post">
             <div>
                 <label>
-                    用户名
+                    标题
                 </label>
-                <input name="name" placeholder="用户名" type="text">
+                <input name="title" type="text">
                 </input>
             </div>
             <div>
                 <label>
-                    密码
+                    内容
                 </label>
-                <input name="password" placeholder="密码" type="password">
-                </input>
+                <textarea name="content" rows="15">
+                </textarea>
             </div>
-            <input type="submit" value="登录">
+            <input type="submit" value="发布">
             </input>
         </form>
     </body>

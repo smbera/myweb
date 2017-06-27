@@ -41,7 +41,8 @@ router.post('/', checkNotLogin, function(req, res, next) {
   // 待写入数据库的用户信息
   var user = {
     name: name,
-    password: password
+    password: password,
+    avatar: "default.jpg"
   };
   // 用户信息写入数据库
   UserModel.create(user)
@@ -51,6 +52,7 @@ router.post('/', checkNotLogin, function(req, res, next) {
 	  // ops: [ { name: '3', password: '3', _id: 595090dd3ff7fd4a143dba95 } ],
 	  // insertedCount: 1,
 	  // insertedIds: [ 595090dd3ff7fd4a143dba95 ] }
+    // 
       // 此 user 是插入 mongodb 后的值，包含 _id
       user = result.ops[0];
       // 将用户信息存入 session

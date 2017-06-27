@@ -1,0 +1,8 @@
+<form  method="post" action="/article/<%= article._id %>">
+        <label>标题</label>
+        <input type="text" name="title" value="<%= article.title %>">
+      
+        <label>内容</label>
+        <textarea name="content" rows="15"><%= article.content %></textarea>
+        <input type="submit"  value="更新">
+</form>

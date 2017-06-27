@@ -1,10 +1,42 @@
+var fs = require('fs');
+var path = require('path');
 var express = require('express');
 var router = express.Router();
 
+var UserModel = require('../models/users');
+var WriteModel = require('../models/write');
 var checkLogin = require('../middlewares/check').checkLogin;
 
 router.get('/:userId', checkLogin, function(req, res, next) {
-  res.render('people');
+    var userId = req.params.userId;
+    // console.log(writeId);
+    WriteModel.getArticles(userId)
+        .then(function(articles) {
+
+            res.render('people', {
+                articles: articles
+            });
+        })
+        .catch(next);
 });
+
+router.post('/:userId', checkLogin, function(req, res, next) {
+    var userId = req.params.userId;
+    var avatar = req.files.avatar.path.split(path.sep).pop();
+    UserModel.updateAvatar(userId, avatar)
+        .then(function(result) {
+            req.session.user.avatar = avatar;
+            res.redirect('/people/' + userId)
+
+        })
+        .catch(function(e) {
+            // 上传失败，异步删除上传的头像
+            fs.unlink(req.files.avatar.path);
+            // 用户名被占用则跳回注册页，而不是错误页
+            res.redirect('/people/' + userId);
+            next(e);
+        });
+});
+
 
 module.exports = router;

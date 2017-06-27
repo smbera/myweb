@@ -9,5 +9,9 @@ module.exports = {
   // 通过用户名获取用户信息
   getUserByName: function getUserByName(name) {
     return User.findOne({ name: name }).exec();
+  },
+
+  updateAvatar: function updateAvatar(userId,avatar) {
+  	return User.update({ _id: userId }, { $set : { "avatar" : avatar} }).exec()
   }
 };

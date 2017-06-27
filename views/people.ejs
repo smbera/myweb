@@ -6,7 +6,23 @@
 	</head>
 	<body>
 		<%- include('components/main-people_header') %>
-		<%= user.name %><br>
-		this is people page
+		
+		<div >
+			<img style="width:60px;height:60px; position: absolute;left: 200px" src="/img/<%= user.avatar %>">
+			<form action="/people/<%= user._id %>" method="post" enctype="multipart/form-data">
+				<input style="width:60px;height:60px;position: absolute; z-index: 100;opacity: 0;cursor: pointer; left: 200px" type="file"  name="avatar">
+				<input type="submit" value="submit" style="position: absolute; left: 270px">
+			</form>
+		    
+		</div>
+		username：<%= user.name %><br>
+		this is people page<br><br><br>
+
+		<% articles.forEach(function (article) { %>
+  		<%- include('components/article_content', { article: article }) %>
+		<% }) %>
+		<script type="text/javascript">
+			
+		</script>
 	</body>
 </html>

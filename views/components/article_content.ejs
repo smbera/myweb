@@ -1,0 +1,9 @@
+		<!-- _id ：<br> -->
+       
+        
+title：<a href="/article/<%= article._id %>"><%= article.title %></a><br>
+<img style="width:40px;height:40px;" src="/img/<%= article.author.avatar %>"> authorname：<%= article.author.name %><br>
+content： <%- article.content %><br>
+ created_at：<%= article.created_at %><br>
+pv：<%= article.pv %><br>
+        <br><br><br>
