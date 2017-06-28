@@ -1,15 +1,22 @@
+<link rel=stylesheet href="/css/signup-signin_header.css">
 
-        <div class="header">
-          <h1><%= myweb.title %></h1>
-          <p><%= myweb.description %></p>
-        </div>
-        <a href="/signup">注册</a>
-        <a href="/signin">登录</a>
-         <% if (success) { %>
-              <p><%= success %></p>
-          <% } %>
+<header class="header3">
+    <div class="wrap">
+        <h1 class="title">
+            <%= myweb.title %>
+        </h1>
+        <p class="description">
+            <%= myweb.description %>
+        </p>
+        <ul>
+            <li>
+                <a href="/signup">注册</a>
+            </li>
+            <li>
+                <a href="/signin">登录</a>
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+</header>
 
-          <% if (error) { %>
-              <p><%= error %></p>
-           <% } %>
-           <br><br>

@@ -1,0 +1,69 @@
+/* start main-people_header*/
+    .header1{
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #eee;
+        background-color: #fff;
+        margin-bottom: 10px;
+    }
+    .header1 .wrap{
+        width: 960px;
+        height: 50px;
+        margin: 0 auto;
+        position:relative;
+    }
+    .header1 .logo{
+        font-size: 30px;
+        font-weight: bold;
+        color: #0f88eb;
+        float: left;
+    }
+    .header1 ul{
+        float: left;
+        line-height: 50px;
+        
+    }
+    .header1 ul li{
+        float: left;
+    }
+    .header1 ul li a{
+        font-size: 14px;
+        color: #8590a6;
+        padding: 14px;
+    }
+    .header1 ul li:first-child a{
+        color: #000;
+    }
+    .header1 ul li:not(:first-child) a:hover{
+        color: #0f88eb;
+    }
+    .header1 .avatar{
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        float: right;
+        cursor: pointer;
+    }
+    .header1 .user{
+        width: 100px;
+        position: absolute;
+        top: 60px;
+        right: -50px;
+        background-color: #fff;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: none;
+        z-index: 10;
+    }
+    .header1 .user a{
+        display: block;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        color: #000;
+        line-height: 40px;
+    }
+    .header1 .user a:hover{
+        background-color: #f7f8fa;
+    }
+/* end main-people_header*/

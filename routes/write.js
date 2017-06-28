@@ -37,7 +37,6 @@ router.post('/', checkLogin, function(req, res, next) {
         .then(function(result) {
             // 此 write 是插入 mongodb 后的值，包含 _id
             write = result.ops[0];
-            req.flash('success', '发表成功');
             // 发表成功后跳转到该文章页
             res.redirect(`/write/${write._id}`);
         })
@@ -54,7 +53,7 @@ router.get('/:writeId', checkLogin, function(req, res, next) {
                 throw new Error('该文章不存在');
             }
 
-            res.render('article', {
+            res.render('article_detail', {
                 article: article
             });
         })

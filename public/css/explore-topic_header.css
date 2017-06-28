@@ -1,0 +1,73 @@
+    .header2{
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #eee;
+        background-color: #0767c9;
+        margin-bottom: 20px;
+    }
+    .header2 .wrap{
+        width: 960px;
+        height: 50px;
+        margin: 0 auto;
+        position:relative;
+    }
+    .header2 .logo{
+        font-size: 30px;
+        font-weight: bold;
+        color: #dde7f1;
+        float: left;
+    }
+    .header2 ul{
+        float: left;
+        line-height: 50px;
+    }
+    .header2 ul li{
+        float: left;
+    }
+    .header2 ul li a{
+        font-size: 14px;
+        color: #dde7f1;
+        padding: 14px;
+    }
+    .header2 ul li a:hover{
+        color: #fff;
+    }
+    .header2 .avatar{
+        padding: 10px;
+        float: right;
+        cursor: pointer;
+    }
+    .header2 .avatar img{
+		width:26px;
+		height:26px;
+		float: left;
+		margin-right: 8px;
+    }
+    .header2 .avatar span{
+    	color: #fff;
+    	float: left;
+    }
+    .header2 .avatar:hover{
+    	background-color: #055fb8;
+    }
+    .header2 .user{
+        width: 120px;
+        position: absolute;
+        top: 45px;
+        right: 0px;
+        background-color: #055fb8;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: none;
+    }
+    .header2 .user a{
+        display: block;
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        color: #fff;
+        line-height: 40px;
+    }
+    .header2 .user a:hover{
+        background-color: #0767c9;
+    }

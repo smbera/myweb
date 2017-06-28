@@ -1,33 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-            <title>
-                <%= myweb.title %>
-            </title>
-            <link href="/css/style.css" rel="stylesheet">
-            </link>
-        </meta>
-    </head>
-    <body>
-        <%- include('components/signup-signin_header') %>
+<%- include('header') %>
+
+<link rel=stylesheet href="/css/sign.css">
+<%- include('components/signup-signin_header') %>
+<div class="sign">
+    <div class="wrap">
         <form method="post">
-            <div>
-                <label>
-                    用户名
-                </label>
-                <input name="name" placeholder="用户名" type="text">
-                </input>
+            <div class="text">
+                <input name="name" placeholder="用户名" type="text" />
+                <input name="password" placeholder="密码" type="password"/>
             </div>
-            <div>
-                <label>
-                    密码
-                </label>
-                <input name="password" placeholder="密码" type="password">
-                </input>
-            </div>
-            <input type="submit" value="登录">
-            </input>
+            <input class="submit" type="submit" value="登录"/>
         </form>
-    </body>
-</html>
+    </div>
+</div>
+<%- include('footer') %>

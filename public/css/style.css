@@ -1,24 +1,49 @@
-/* ---------- 全局样式 ---------- */
+/* reset */
+
+body, h1, h2, h3, h4, h5, p, dl, dd, ul, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+}
+
+em {
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    border: none;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+input, textarea {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
 
 body {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  padding-top: 40px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    background-color: #f7f8fa;
 }
 
-a:hover {
-  border-bottom: 3px solid #4fc08d;
+.clear{
+    clear: both;
 }
+/* end reset */
 
-.button {
-  background-color: #4fc08d !important;
-  color: #fff !important;
-}
-
-
-/* ---------- header ---------- */
-.header h1,p{
-  text-align:'center';
-
-}

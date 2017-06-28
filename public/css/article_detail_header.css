@@ -1,0 +1,51 @@
+	.header4{
+		width: 100%;
+		height: 40px;
+	}
+	.header4 .logo a{
+		margin-left: 20px;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 40px;
+		float: left;
+		color: #808690;
+	}
+	.header4 .write{
+		float: right;
+	}
+	.header4 .write li{
+		float: left;
+	}
+	.header4 .write li a{
+		display: block;
+		width: 70px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		color: #808690;
+	}
+	.header4 .write li:first-child a:hover{
+		color: #000;
+	}
+	.header4 .user{
+        width: 200px;
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        background-color: #fff;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: none;
+        box-shadow: 0 0 1px #000;
+    }
+    .header4 .user a{
+        display: block;
+        padding-left: 20px;
+        width: 180px;
+        height: 40px;
+        color: #000;
+        line-height: 40px;
+    }
+    .header4 .user a:hover{
+        background-color: #f2f2f2;
+    }

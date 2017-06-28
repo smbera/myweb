@@ -1,32 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-            <title>
-                <%= myweb.title %>
-            </title>
-            <link href="/css/style.css" rel="stylesheet">
-            </link>
-        </meta>
-    </head>
-    <body>
-        <form action="/write" method="post">
-            <div>
-                <label>
-                    标题
-                </label>
-                <input name="title" type="text">
-                </input>
-            </div>
-            <div>
-                <label>
-                    内容
-                </label>
-                <textarea name="content" rows="15">
-                </textarea>
-            </div>
-            <input type="submit" value="发布">
-            </input>
-        </form>
-    </body>
-</html>
+<%- include('header') %>
+<%- include('components/article_detail_header') %>
+
+<link rel=stylesheet href="/css/write_edit.css">
+
+<div class="wrap">
+    <form action="/write" method="post">
+        <h1>标题:</h1><input class="title" name="title" type="text">
+        <h1>内容:</h1><textarea name="content" rows="15"></textarea>
+        <input class="submit" type="submit" value="发布">
+    </form>
+</div>
+
+
+<%- include('footer') %>

@@ -9,10 +9,16 @@ var checkLogin = require('../middlewares/check').checkLogin;
 
 router.get('/:userId', checkLogin, function(req, res, next) {
     var userId = req.params.userId;
+
     // console.log(writeId);
     WriteModel.getArticles(userId)
         .then(function(articles) {
-
+             
+            articles.forEach(function(item){
+                delete item.author.password;
+            })
+            
+            // console.log(articles);
             res.render('people', {
                 articles: articles
             });

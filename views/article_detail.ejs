@@ -1,13 +1,43 @@
-        
-<h1><%= article.title %></h1><br>
-<a href="/people/<%= article.author._id %>"><img style="width:40px;height:40px;" src="/img/<%= article.author.avatar %>"> </a>
-<%= article.author.name %>&nbsp&nbsp&nbsp&nbsp<%= article.created_at %><br>
-<%- article.content %><br>
-pv：<%= article.pv %><br>
+<%- include('header') %>
+<%- include('components/article_detail_header') %>
 
-<% if(article.author._id==user._id){ %>
-	<a href="/article/<%= article._id %>/edit">编辑</a>
-	<a href="/article/<%= article._id %>/remove">删除</a>
-<%}%>
+<link rel=stylesheet href="/css/article_detail.css">
 
-        <br><br><br>
+
+<div class="container">
+    <div class="title">
+        <%= article.title %>
+    </div>
+    <div class="user">
+        <a href="/people/<%= article.author._id %>">
+            <img src="/img/<%= article.author.avatar %>"/>
+        </a>
+        <span class="name">
+            <%= article.author.name %>
+        </span>
+        <span class="time">
+            创建于：<%= article.created_at %>
+        </span>
+    </div>
+    <div class="content">
+        <%- article.content %>
+    </div>
+    <div class="operation">
+        <span class="look">浏览量：<%= article.pv %></span>
+        <% if(article.author._id==user._id){ %>
+            <a href="/article/<%= article._id %>/edit">
+                编辑
+            </a>
+            <a href="/article/<%= article._id %>/remove">
+                删除
+            </a>
+        <%}%>
+    </div>
+</div>
+
+<style type="text/css">
+    
+</style>
+
+
+<%- include('footer') %>

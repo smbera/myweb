@@ -1,0 +1,27 @@
+    .sign{
+        width: 100%;
+    }
+    .sign .wrap{
+        width: 340px;
+        margin: 0 auto;
+    }
+    .sign .text{
+        border: 1px solid #d5d5d5;
+        margin-bottom: 20px;
+    }
+    .sign .text input{
+        width: 277px;
+        height: 66px;
+        border: none;
+        padding: 0 30px 0 30px;
+    }
+    .sign .submit{
+        background-color: #1089ec;
+        height: 40px;
+        color: #fff;
+        width: 340px;
+        cursor: pointer;
+    }
+    .sign .submit:hover{
+        background-color: #45a3ef;
+    }

@@ -1,0 +1,31 @@
+<link rel=stylesheet href="/css/article_detail_header.css">
+
+<header class="header4">
+	<div class="logo">
+		<a href="/main"><%= myweb.title%></a>
+	</div>
+	<div class="write">
+		<ul>
+		    <li>
+		    	<a href="/write">写文章</a>
+		    </li>
+		    <li class="more">
+		    	<a href="javascript:;">---</a>
+		    </li>
+		</ul>
+	</div>
+	<div class="user">
+		<a href="/people/<%= user._id %>">我的文章</a>
+	</div>
+</header>
+
+<script type="text/javascript">
+	$(document).ready( function () {
+		$(".header4 .more").hover(function(){
+			$(".header4 .user").toggle()
+		});
+		$(".header4 .user").hover(function(){
+			$(this).toggle()
+		});
+	})
+</script>

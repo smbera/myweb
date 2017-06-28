@@ -18,15 +18,12 @@ router.post('/', checkNotLogin, function(req, res, next) {
   UserModel.getUserByName(name)
     .then(function (user) {
       if (!user) {
-        req.flash('error', '用户不存在');
         return res.redirect('back');
       }
       // 检查密码是否匹配
       if (password !== user.password) {
-        req.flash('error', '用户名或密码错误');
         return res.redirect('back');
       }
-      req.flash('success', '登录成功');
       // 用户信息写入 session
       delete user.password;
       req.session.user = user;

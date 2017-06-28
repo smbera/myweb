@@ -1,28 +1,67 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-	</head>
-	<body>
-		<%- include('components/main-people_header') %>
-		
-		<div >
-			<img style="width:60px;height:60px; position: absolute;left: 200px" src="/img/<%= user.avatar %>">
-			<form action="/people/<%= user._id %>" method="post" enctype="multipart/form-data">
-				<input style="width:60px;height:60px;position: absolute; z-index: 100;opacity: 0;cursor: pointer; left: 200px" type="file"  name="avatar">
-				<input type="submit" value="submit" style="position: absolute; left: 270px">
-			</form>
-		    
-		</div>
-		username：<%= user.name %><br>
-		this is people page<br><br><br>
+<%- include('header') %>
+<link rel=stylesheet href="/css/main.css">
+<link rel=stylesheet href="/css/people.css">
 
+<%- include('components/main-people_header') %>
+
+<div class="user_infor">
+	<img class="user_bg" src="/img/default.jpg"/>
+	<div class="user_name">
+		<%if(articles[0]){%>
+			<span>
+				<%=articles[0].author.name%>
+			</span>
+	    <%} else{%>
+			<span>
+				<%= user.name %>
+			</span>
+		<%}%>
+	</div>
+	<div class="user_avatar">
+	    <%if(articles[0]){%>
+			<% if(user._id==articles[0].author._id){ %>
+				<img src="/img/<%= user.avatar %>">
+				<form action="/people/<%= user._id %>" method="post" enctype="multipart/form-data">
+					<input class="file" type="file"  name="avatar">
+					<input class="submit" type="submit" value="提交">
+				</form>
+				<div class="update_avatar">
+					修改我的头像
+				</div>
+			<%}else {%>
+				<img src="/img/<%= articles[0].author.avatar %>">
+			<%}%>
+	    <%} else{%>
+			<img src="/img/<%= user.avatar %>">
+			<form action="/people/<%= user._id %>" method="post" enctype="multipart/form-data">
+				<input class="file"  type="file"  name="avatar">
+				<input class="submit" type="submit" value="提交">
+			</form>
+			<div class="update_avatar">
+				修改我的头像
+			</div>
+		<%}%>
+	</div>
+</div>
+
+<div class="container">
+	<div class="left_container">
 		<% articles.forEach(function (article) { %>
-  		<%- include('components/article_content', { article: article }) %>
+			<%- include('components/article_content', { article: article }) %>
 		<% }) %>
-		<script type="text/javascript">
-			
-		</script>
-	</body>
-</html>
+	</div>
+	<div class="right_container">
+		
+	</div>
+	<div class="clear"></div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready( function () {
+		$(".file").hover(function(){
+			$(".update_avatar").toggle()
+		});
+
+	})
+</script>
+<%- include('footer') %>

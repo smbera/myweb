@@ -1,0 +1,36 @@
+	.container{
+        width: 960px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .container .title{
+        font-weight: 700;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .container .user{
+        height: 40px;
+        margin-bottom: 40px;
+    }
+    .container .user img{
+        width:40px;
+        height:40px;
+        border-radius: 50%;
+        margin-right: 18px;
+    }
+    .container .user .name,.time{
+        line-height: 40px;
+        margin-right: 18px;
+    }
+    .container .content{
+        margin-bottom: 40px;
+    }
+    .container span{
+        margin-right: 200px;
+    }
+    .container a{
+        margin-right: 20px;
+    }
+    .container a:hover{
+        color: #0e88eb;
+    }
