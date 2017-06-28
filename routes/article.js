@@ -8,9 +8,13 @@ router.get('/:articleId', checkLogin, function(req, res, next) {
 
     var articleId = req.params.articleId;
     // console.log(writeId);
-    WriteModel.getArticleById(articleId)
+    Promise.all([
+        WriteModel.getArticleById(articleId),
+        WriteModel.incPv(articleId)
+    ])
+    
         .then(function(article) {
-
+            var article=article[0];
             res.render('article_detail', {
                 article: article[0]
             });

@@ -88,5 +88,12 @@ module.exports = {
                 _id: articleId
             })
             .exec();
+    },
+
+    // 通过文章 id 给 pv 加 1
+    incPv: function incPv(articleId) {
+        return Write
+        .update({ _id: articleId }, { $inc: { pv: 1 } })
+        .exec();
     }
 };
