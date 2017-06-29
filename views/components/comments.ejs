@@ -1,0 +1,23 @@
+
+<% comments.forEach(function (comment) { %>
+			<br/><br/><br/>
+            _id: <%=comment._id%><br/>
+            author: <%=comment.author%><br/>
+            articleId: <%=comment.articleId%><br/>
+            content: <%=comment.content%><br/>
+            created_at: <%=comment.created_at%><br/><br/>
+
+    <img src="/img/<%=comment.author.avatar%>" style="width: 30px;height: 30px;">
+    <a href="javascript:;"><%=comment.author.name%></a> 
+    <span><%=comment.created_at%></span>   
+    <p><%=comment.content%></p>   
+	<% if (user._id == comment.author._id) { %>
+        <a class="reply" href="/article/<%= article._id %>/comment/<%= comment._id %>/remove">删除</a>
+    <% } %>
+    <br/><br/><br/><br/>
+<% }) %>
+
+<form action="/article/<%= article._id %>/comment" method="post">
+    <textarea name="content"></textarea>
+    <input type="submit" value="留言"/>
+</form>

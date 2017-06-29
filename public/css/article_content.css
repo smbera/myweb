@@ -48,7 +48,10 @@
 	}
 	.article .article_look{
 		float: left;
-		
+		margin-right: 30px;
+	}
+	.article .article_commentsCount{
+		float: left;
 	}
 	.article .article_time{
 		float: right;

@@ -43,6 +43,22 @@ router.post('/:userId', checkLogin, function(req, res, next) {
             next(e);
         });
 });
+router.post('/user_bg/:userId', checkLogin, function(req, res, next) {
+    var userId = req.params.userId;
+    var user_bg = req.files.user_bg.path.split(path.sep).pop();
+    UserModel.updateUser_bg(userId, user_bg)
+        .then(function(result) {
+            req.session.user.user_bg = user_bg;
+            res.redirect('/people/' + userId)
 
+        })
+        .catch(function(e) {
+            // 上传失败，异步删除上传的头像
+            fs.unlink(req.files.user_bg.path);
+            // 用户名被占用则跳回注册页，而不是错误页
+            res.redirect('/people/' + userId);
+            next(e);
+        });
+});
 
 module.exports = router;

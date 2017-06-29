@@ -24,6 +24,7 @@
     </div>
     <div class="operation">
         <span class="look">浏览量：<%= article.pv %></span>
+        <span class="commentsCount">评论数：<%= article.commentsCount %></span>
         <% if(article.author._id==user._id){ %>
             <a href="/article/<%= article._id %>/edit">
                 编辑
@@ -35,9 +36,8 @@
     </div>
 </div>
 
-<style type="text/css">
-    
-</style>
+<%- include('components/comments') %>
+
 
 
 <%- include('footer') %>

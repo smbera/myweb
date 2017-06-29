@@ -42,7 +42,8 @@ router.post('/', checkNotLogin, function(req, res, next) {
   var user = {
     name: name,
     password: password,
-    avatar: "default.jpg"
+    avatar: "default.jpg",
+    user_bg: "user_bg.jpg"
   };
   // 用户信息写入数据库
   UserModel.create(user)

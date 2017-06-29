@@ -22,10 +22,15 @@
 	<div class="article_look">
 		浏览量：<%= article.pv %>
 	</div>
+    <div class="article_commentsCount">
+    	评论数：<%= article.commentsCount %>
+    </div>
 	<div class="article_time">
-		<%= article.created_at %>
+		创建于：<%= article.created_at %>
 	</div>
 </div>
+
+
 
 <script type="text/javascript">
 $(document).ready(function() {

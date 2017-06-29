@@ -13,5 +13,8 @@ module.exports = {
 
   updateAvatar: function updateAvatar(userId,avatar) {
   	return User.update({ _id: userId }, { $set : { "avatar" : avatar} }).exec()
+  },
+  updateUser_bg: function updateUser_bg(userId,user_bg) {
+    return User.update({ _id: userId }, { $set : { "user_bg" : user_bg} }).exec()
   }
 };
